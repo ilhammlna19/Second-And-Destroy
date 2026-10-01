@@ -85,3 +85,38 @@ img{max-width:100%;display:block}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 .card-img img,.detail-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+/* ===== Beranda baru ===== */
+@keyframes rise{from{opacity:0;transform:translateY(28px)}}
+.hero{grid-template-columns:1.1fr 1fr;align-items:center;overflow:hidden}
+.hero h1{font-size:clamp(3.2rem,8vw,8rem);animation:rise .7s both}
+.hero-copy{display:grid;gap:24px;justify-items:start}
+.hero-copy p{font-size:1.1rem;color:#cfc9bb;max-width:44ch;animation:rise .7s .1s both}
+.hero-copy .btn{animation:rise .7s .2s both}
+.hero-collage{position:relative;height:clamp(340px,40vw,540px)}
+.pic{position:absolute;width:56%;background:var(--paper);padding:8px;box-shadow:8px 8px 0 var(--accent);animation:rise .8s both}
+.pic img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.pic-1{left:0;top:0;rotate:-6deg}
+.pic-2{right:0;top:14%;rotate:5deg;z-index:2;animation-delay:.15s}
+.pic-3{left:18%;bottom:0;rotate:-2deg;z-index:1;animation-delay:.3s}
+.hero-logo-sticker{position:absolute;right:2%;bottom:6%;rotate:10deg;z-index:3;animation:rise .8s .45s both}
+
+.perks{display:grid;grid-template-columns:repeat(3,1fr);background:var(--paper);border-bottom:3px solid var(--ink)}
+.perk{padding:28px clamp(16px,3vw,40px);border-right:3px solid var(--ink)}
+.perk:last-child{border-right:0}
+.perk b{font-family:var(--f-display);color:var(--accent);font-size:1.6rem}
+.perk h3{font-family:var(--f-display);font-size:1.15rem;text-transform:uppercase;margin:4px 0}
+.perk p{color:var(--muted)}
+
+.cta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding:48px clamp(16px,4vw,48px);background:var(--accent);color:var(--ink);border-top:3px solid var(--ink)}
+.cta h2{font-family:var(--f-display);font-size:clamp(1.8rem,5vw,3rem);text-transform:uppercase;line-height:1}
+.cta .btn{background:var(--ink);color:var(--paper)}
+.cta .btn:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+@media(max-width:760px){
+.hero h1{font-size:16vw}
+.hero-collage{height:440px}
+.pic{width:58%}
+.perks{grid-template-columns:1fr}
+.perk{border-right:0;border-bottom:3px solid var(--ink)}
+.perk:last-child{border-bottom:0}
+}
