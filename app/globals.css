@@ -84,3 +84,4 @@ img{max-width:100%;display:block}
 .line{grid-column:2/4;text-align:left}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+.card-img img,.detail-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
