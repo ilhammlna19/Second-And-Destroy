@@ -120,3 +120,23 @@ img{max-width:100%;display:block}
 .perk{border-right:0;border-bottom:3px solid var(--ink)}
 .perk:last-child{border-bottom:0}
 }
+/* ===== Tema warna baru ===== */
+:root{--bg:#EBDFC8;--paper:#F8F3E6;--ink:#1D2B3A;--accent:#E4361B;--yellow:#E8B33A;--muted:#4F5B66}
+
+/* Hero kuning */
+.hero{background:var(--yellow);color:var(--ink)}
+.hero h1 span{color:var(--paper);-webkit-text-stroke:3px var(--ink);paint-order:stroke fill}
+.hero-copy p{color:var(--ink)}
+.hero .btn{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.hero .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.pic{box-shadow:8px 8px 0 var(--ink)}
+.hero-logo-sticker{background:var(--ink);border-radius:50%;padding:6px}
+.hero-logo-sticker svg{display:block}
+
+/* Tiga kotak keunggulan, masing-masing warna */
+.perks{background:none}
+.perk:nth-child(1){background:#B9CBA9}
+.perk:nth-child(2){background:#A9C4D9}
+.perk:nth-child(3){background:#F2C5A8}
+.perk b{color:var(--ink)}
+.perk p{color:var(--ink);opacity:.85}
