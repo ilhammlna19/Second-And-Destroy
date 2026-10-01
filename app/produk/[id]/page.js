@@ -11,7 +11,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const p = getProduct(id);
-  return p ? { title: p.name, description: p.desc } : {};
+  if (!p) return {};
+  return {
+    title: p.name,
+    description: p.desc,
+    openGraph: { title: p.name, description: p.desc, images: p.image ? [p.image] : undefined },
+  };
 }
 
 export default async function ProductPage({ params }) {
@@ -23,6 +28,7 @@ export default async function ProductPage({ params }) {
       <Link href="/#koleksi" className="inline-link">Kembali ke koleksi</Link>
       <div className="detail-grid">
         <div className="detail-img" style={{ background: p.tee + "22" }}>
+          {p.soldOut && <span className="sold-badge">Stok habis</span>}
           {p.image ? <img src={p.image} alt={p.name} /> : <TeeArt product={p} />}
         </div>
         <div>
@@ -30,7 +36,8 @@ export default async function ProductPage({ params }) {
           <h1>{p.name}</h1>
           <p className="price">{rupiah(p.price)}</p>
           <p className="desc">{p.desc}</p>
-          <AddToCart id={p.id} />
+          <AddToCart id={p.id} soldOut={p.soldOut} />
+          <Link href="/panduan-ukuran" className="inline-link size-link">Lihat panduan ukuran</Link>
         </div>
       </div>
     </div>

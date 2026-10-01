@@ -8,11 +8,13 @@ export default function Navbar() {
   return (
     <header className="nav">
       <Link href="/" className="brand">
-        <Logo size={46} color="#EDE9DF" />
+        <Logo size={46} color="#F8F3E6" />
         <span>Second And Destroy</span>
       </Link>
       <nav>
         <Link href="/#koleksi">Koleksi</Link>
+        <Link href="/tentang">Tentang</Link>
+        <Link href="/cara-pesan">Cara Pesan</Link>
         <Link href="/keranjang">Keranjang <span className="badge">{count}</span></Link>
       </nav>
     </header>
