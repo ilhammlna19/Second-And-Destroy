@@ -31,7 +31,7 @@ export default function CartPage() {
       <ul className="cart-list">
         {rows.map((r) => (
           <li key={r.id + r.size}>
-            <div className="thumb"><TeeArt product={r.p} /></div>
+            <div className="thumb">{r.p.image ? <img src={r.p.image} alt={r.p.name} /> : <TeeArt product={r.p} />}</div>
             <div className="cart-name"><strong>{r.p.name}</strong><span>Ukuran {r.size}</span></div>
             <div className="qty">
               <button onClick={() => change(r.id, r.size, -1)} aria-label="Kurangi">−</button>
